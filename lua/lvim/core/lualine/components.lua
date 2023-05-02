@@ -57,7 +57,7 @@ return {
     function()
       local utils = require "lvim.core.lualine.utils"
       if vim.bo.filetype == "python" then
-        local venv = os.getenv "CONDA_DEFAULT_ENV" or os.getenv "VIRTUAL_ENV"
+        local venv = vim.b["virtual_env"] or os.getenv "CONDA_DEFAULT_ENV" or os.getenv "VIRTUAL_ENV"
         if venv then
           local icons = require "nvim-web-devicons"
           local py_icon, _ = icons.get_icon ".py"
@@ -67,7 +67,7 @@ return {
       return ""
     end,
     color = { fg = colors.green },
-    cond = conditions.hide_in_width,
+    cond = nil,
   },
   diagnostics = {
     "diagnostics",
