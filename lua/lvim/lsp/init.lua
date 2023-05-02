@@ -89,6 +89,8 @@ end
 function M.setup()
   Log:debug "Setting up LSP support"
 
+  require("venom").setup()
+
   local lsp_status_ok, _ = pcall(require, "lspconfig")
   if not lsp_status_ok then
     return
