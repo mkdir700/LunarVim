@@ -80,7 +80,6 @@ M.config = function()
     },
     mappings = {
       [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
-      ["w"] = { "<cmd>w!<CR>", "Save" },
       ["q"] = { "<cmd>lua require('lvim.utils.functions').smart_quit()<CR>", "Quit" },
       ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle" },
       ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
