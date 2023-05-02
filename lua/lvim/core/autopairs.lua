@@ -28,13 +28,13 @@ function M.config()
     ---@usage map the <BS> key
     map_bs = true,
     ---@usage map <c-w> to delete a pair if possible
-    map_c_w = false,
+    map_c_w = true,
     ---@usage disable when insert after visual block mode
     disable_in_visualblock = false,
     ---@usage  change default fast_wrap
     fast_wrap = {
       map = "<M-e>",
-      chars = { "{", "[", "(", '"', "'" },
+      chars = { "{", "[", "(", '"', "'", "`" },
       pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
       offset = 0, -- Offset from pattern match
       end_key = "$",
