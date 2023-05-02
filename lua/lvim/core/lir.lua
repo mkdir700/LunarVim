@@ -22,8 +22,8 @@ M.config = function()
     mappings = {
       ["l"] = actions.edit,
       ["<CR>"] = actions.edit,
-      ["<C-s>"] = actions.split,
-      ["v"] = actions.vsplit,
+      ["<C-x>"] = actions.split,
+      ["<C-v>"] = actions.vsplit,
       ["<C-t>"] = actions.tabedit,
 
       ["h"] = actions.up,
@@ -37,7 +37,7 @@ M.config = function()
       ["i"] = actions.toggle_show_hidden,
       ["d"] = actions.delete,
 
-      ["J"] = function()
+      ["m"] = function()
         mark_actions.toggle_mark()
         vim.cmd "normal! j"
       end,
