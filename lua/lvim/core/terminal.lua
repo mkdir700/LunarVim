@@ -118,7 +118,14 @@ end
 
 M._exec_toggle = function(opts)
   local Terminal = require("toggleterm.terminal").Terminal
-  local term = Terminal:new { cmd = opts.cmd, count = opts.count, direction = opts.direction }
+  -- NOTE: 读取 virtual_env 缓冲区变量，用于在终端中激活虚拟环境，依赖插件 nvimconf-venom
+  local venv = vim.b["virtual_env"]
+  local term = Terminal:new {
+    cmd = opts.cmd,
+    count = opts.count,
+    direction = opts.direction,
+    env = venv and { VIRTUAL_ENV = venv } or nil ,
+  }
   term:toggle(opts.size, opts.direction)
 end
 
