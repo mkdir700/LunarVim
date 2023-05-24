@@ -2,12 +2,7 @@
 local core_plugins = {
   -- Packer can manage itself as an optional plugin
   { "wbthomason/packer.nvim" },
-  { 
-    "folke/neoconf.nvim",
-    config = function()
-      require("neoconf").setup()
-    end,
-  },
+  { "folke/neoconf.nvim" },
   { "neovim/nvim-lspconfig" },
   {
     "rafi/neoconf-venom.nvim",
