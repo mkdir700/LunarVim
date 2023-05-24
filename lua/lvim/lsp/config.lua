@@ -44,7 +44,7 @@ local skipped_filetypes = { "markdown", "rst", "plaintext", "toml", "proto" }
 
 local join_paths = require("lvim.utils").join_paths
 
-require("neoconf").setup()
+-- require("neoconf").setup()
 
 return {
   templates_dir = join_paths(get_runtime_dir(), "site", "after", "ftplugin"),
