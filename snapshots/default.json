@@ -1,4 +1,10 @@
 {
+  "neoconf.nvim": {
+    "commit": "bbf98ce"
+  },
+  "neoconf-venom.nvim": {
+    "commit": "708edf0"
+  },
   "Comment.nvim": {
     "commit": "ad7ffa8"
   },
