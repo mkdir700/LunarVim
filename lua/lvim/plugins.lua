@@ -12,6 +12,9 @@ local core_plugins = {
   {
     "rafi/neoconf-venom.nvim",
     requires = { "nvim-lua/plenary.nvim", "folke/neoconf.nvim" },
+    config = function()
+      require("venom").setup()
+    end,
   },
   { "tamago324/nlsp-settings.nvim" },
   {
