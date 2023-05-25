@@ -126,16 +126,21 @@ M._exec_toggle = function(opts)
     direction = opts.direction,
     env = venv and { VIRTUAL_ENV = venv } or nil,
     on_open = function(t)
-      -- 打开终端后，自动执行激活虚拟环境命令
-      -- 如果当前终端是 fish
-      if vim.o.shell:find "fish" then
-        t:send { string.format("source %s/bin/activate.fish", venv) }
-      else
-        -- 如果当前终端是 bash
-        t:send { string.format("source %s/bin/activate", venv) }
+      -- 是否为首次打开终端
+      if not vim.b["terminal_opened"] then
+        -- 设置终端打开标志
+        vim.b["terminal_opened"] = true
+        -- 打开终端后，自动执行激活虚拟环境命令
+        -- 如果当前终端是 fish
+        if vim.o.shell:find "fish" then
+          t:send { string.format("source %s/bin/activate.fish", venv) }
+        else
+          -- 如果当前终端是 bash
+          t:send { string.format("source %s/bin/activate", venv) }
+        end
+        -- 清空终端缓冲区
+        t:clear()
       end
-      -- 清空终端缓冲区
-      t:clear()
     end,
   }
   term:toggle(opts.size, opts.direction)
