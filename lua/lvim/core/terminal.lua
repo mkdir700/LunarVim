@@ -127,7 +127,7 @@ M._exec_toggle = function(opts)
     env = venv and { VIRTUAL_ENV = venv } or nil,
     on_open = function(t)
       -- 是否为首次打开终端
-      if not vim.b["terminal_opened"] then
+      if not vim.b["terminal_opened"] and venv then
         -- 设置终端打开标志
         vim.b["terminal_opened"] = true
         -- 打开终端后，自动执行激活虚拟环境命令
