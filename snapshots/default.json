@@ -130,8 +130,5 @@
   },
   "which-key.nvim": {
     "commit": "61553ae"
-  },
-  "lspkind.nvim": {
-    "commit": "57610d5"
   }
 }

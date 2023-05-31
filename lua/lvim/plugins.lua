@@ -289,11 +289,6 @@ local core_plugins = {
     end,
     disable = lvim.colorscheme ~= "onedarker",
   },
-
-  {
-    "onsails/lspkind.nvim",
-    branch = "master",
-  },
 }
 
 local default_snapshot_path = join_paths(get_lvim_base_dir(), "snapshots", "default.json")
